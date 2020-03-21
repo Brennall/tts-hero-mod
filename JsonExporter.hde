@@ -1,0 +1,95 @@
+<!--TEMPLATE_NAME-->6e JSON - Brennall's 6e Full Combat Record<!--/TEMPLATE_NAME--><!--TEMPLATE_DESCRIPTION--><p>6e JSON - Brennall's 6e Combat Record</p><p>Version 1.7  21/03/2019</p><p>JSON Data dump for ingestion online into other systems</p><!--/TEMPLATE_DESCRIPTION--><!--FILE_EXTENSION-->json<!--/FILE_EXTENSION-->{
+"name":"<!--CHARACTER_NAME-->",
+"version":1.7,
+"str":<!--STR-->{"value":"<!--PRIMARY-->","shortname":"str","name":"Strength","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/STR-->
+"dex":<!--DEX-->{"value":"<!--PRIMARY-->","shortname":"dex","name":"Dexterity","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/DEX-->
+"con":<!--CON-->{"value":"<!--PRIMARY-->","shortname":"con","name":"Constitution","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/CON-->
+"int":<!--INT-->{"value":"<!--PRIMARY-->","shortname":"int","name":"Intelligence","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/INT-->
+"ego":<!--EGO-->{"value":"<!--PRIMARY-->","shortname":"ego","name":"Ego","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/EGO-->
+"pre":<!--PRE-->{"value":"<!--PRIMARY-->","shortname":"pre","name":"Presence","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/PRE-->
+"spd":<!--SPD-->{"value":"<!--PRIMARY-->","shortname":"spd","name":"Speed","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""},<!--/SPD-->
+"ocv":<!--OCV_CHAR-->{"value":"<!--PRIMARY-->","shortname":"ocv","name":"Offensive Combat Value","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""},<!--/OCV_CHAR-->
+"dcv":<!--DCV_CHAR-->{"value":"<!--PRIMARY-->","shortname":"dcv","name":"Defensive Combat Value","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""},<!--/DCV_CHAR-->
+"omcv":<!--OMCV-->{"value":"<!--PRIMARY-->","shortname":"omcv","name":"Offensive Mental Combat Value","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""},<!--/OMCV-->
+"dmcv":<!--DMCV-->{"value":"<!--PRIMARY-->","shortname":"dmcv","name":"Defensive Mental Combat Value","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""},<!--/DMCV-->
+"pd":<!--PD-->{"value":"<!--PRIMARY-->","shortname":"pd","name":"Physical Defence","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""},
+"pdr":{"value":"<!--PD_RESISTANT_PRIMARY-->","shortname":"pdr","name":"Physical Resistant Defence","roll":"","damage":"","value2":"<!--PD_RESISTANT_SECONDARY-->","roll2":"","damage2":""}<!--/PD-->,
+"ed":<!--ED-->{"value":"<!--PRIMARY-->","shortname":"ed","name":"Energy Defence","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""},
+"edr":{"value":"<!--ED_RESISTANT_PRIMARY-->","shortname":"edr","name":"Energy Resistant Defence","roll":"","damage":"","value2":"<!--ED_RESISTANT_SECONDARY-->","roll2":"","damage2":""}<!--/ED-->,
+"per":{"value":"<!--PER_ROLL-->","shortname":"per","name":"Perception Roll","roll":"<!--PER_ROLL-->","damage":""},
+"rec":<!--REC-->{"value":"<!--PRIMARY-->","shortname":"rec","name":"Recovery","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""}<!--/REC-->,
+"body":<!--BODY-->{"value":"<!--PRIMARY-->","shortname":"body","name":"Body","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""}<!--/BODY-->,
+"end":<!--END-->{"value":"<!--PRIMARY-->","shortname":"end","name":"Endurance","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""}<!--/END-->,
+"stun":<!--STUN-->{"value":"<!--PRIMARY-->","shortname":"stun","name":"Stun","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""}<!--/STUN-->,
+"movement":{
+<!--IF_RUNNING-->"run":{"combat":"<!--RUNNING_TOTAL-->","noncombat":"<!--RUNNING_TOTAL_NONCOMBAT-->","icon":"ui_run"},
+<!--/IF_RUNNING--><!--IF_FLIGHT-->"fly":{"combat":"<!--FLIGHT_TOTAL-->","noncombat":"<!--FLIGHT_TOTAL_NONCOMBAT-->","icon":"ui_fly"},
+<!--/IF_FLIGHT--><!--IF_SWIMMING-->"swim":{"combat":"<!--SWIMMING_TOTAL-->","noncombat":"<!--SWIMMING_TOTAL_NONCOMBAT-->","icon":"ui_swim"},
+<!--/IF_SWIMMING--><!--IF_GLIDING-->"glide":{"combat":"<!--GLIDING_TOTAL-->","noncombat":"<!--GLIDING_TOTAL_NONCOMBAT-->","icon":"ui_glide"},
+<!--/IF_GLIDING--><!--IF_SWINGING-->"swing":{"combat":"<!--SWINGING_TOTAL-->","noncombat":"<!--SWINGING_TOTAL_NONCOMBAT-->","icon":"ui_swing"},
+<!--/IF_SWINGING--><!--IF_TELEPORTATION-->"teleport":{"combat":"<!--TELEPORTATION_TOTAL-->","noncombat":"<!--TELEPORTATION_TOTAL_NONCOMBAT-->","icon":"ui_teleport"},
+<!--/IF_TELEPORTATION--><!--IF_TUNNELING-->"tunnel":{"combat":"<!--TUNNELING_TOTAL-->","noncombat":"<!--TUNNELING_TOTAL_NONCOMBAT-->","icon":"ui_tunnel"},
+<!--/IF_TUNNELING--><!--IF_LEAPING--><!--LEAPING-->"leap":{"combat":"<!--LEAPING_HORIZONTAL_TOTAL-->","noncombat":"<!--LEAPING_TOTAL_NONCOMBAT-->","icon":"ui_leap"},<!--/LEAPING--><!--/IF_LEAPING-->},
+"skills":[
+	{"name":"Perception","roll":"<!--PER_ROLL-->"}<!--IFSKILLS-->,
+<!--SKILLS--><!--IS_NOT_SEPARATOR--><!--IS_NOT_LIST-->	{"name":"<!--SKILL_TEXT_NO_ROLL-->","roll":"<!--SKILL_ROLL-->"},
+<!--/IS_NOT_LIST--><!--/IS_NOT_SEPARATOR--><!--/SKILLS--><!--/IFSKILLS-->],
+"attacks":[<!--IFPOWERS--><!--POWERS--><!--IF_ATTACK-->
+	{"name":"<!--IFNAME--><!--NAME--><!--/IFNAME-->","type":"<!--DISPLAY-->","damage":"<!--POWER_DMG-->","range":"<!--POWER_RANGE-->","input":"<!--INPUT--><!--OPTION-->","level":"<!--LEVELS-->","end":"<!--POWER_END-->","active":"<!--ACTIVE_COST-->","base":"<!--BASE_COST-->","XMLID":"<!--XMLID-->","strMod":"<!--POWER_DMG-->"},<!--/IF_ATTACK--><!--/POWERS--><!--/IFPOWERS-->],
+"martialArts":[	
+	{"name":"Other Attacks","gameEdition":6 ,"ocvMod":0,"dcvMod":0,"dice":3,"halfDice":false,"effect":"Normal Attack","time":"½","level":"0","killingAttack":false,"active":"1","targetNumber":0,"targetCheck":false,"stunMultiplierMod":0,"tool":"Other Attacks: ½ Phase, +0 OCV, +0 DCV, Normal attack","toHit":true,"againstOCV":false,"toPost":false,"post":"","rngMod":0,"abort":false},<!--MARTIAL_ARTS--><!--IF_MANEUVER-->,{"name":"<!--MANEUVER_NAME-->","gameEdition":6 ,"ocvMod":<!--MANEUVER_OCV-->,"dcvMod":<!--MANEUVER_DCV-->,"dice":3,"halfDice":false,"effect":"<!--MANEUVER_EFFECT-->","time":"<!--MANEUVER_PHASE-->","level":"<!--LEVELS-->","killingAttack":false,"toHit":true,"againstOCV":false,"toPost":false,"post":"","active":"<!--ACTIVE_COST-->","targetNumber":0,"targetCheck":false,"stunMultiplierMod":0,"tool":"<!--TEXT-->", $$$RANGE$$$<!--MA_TEXT-->, Range +0,£££RANGE£££, !!!ABORT!!!<!--MANEUVER_EFFECT-->&&&ABORT&&&},<!--/IF_MANEUVER--><!--/MARTIAL_ARTS-->],
+"rolls":[<!--IFPOWERS--><!--POWERS--><!--IF_ATTACK-->
+	{"name":"<!--IFNAME--><!--NAME--><!--/IFNAME-->","gameEdition":6,"tool":"<!--POWER_DMG-->, <!--DISPLAY--> (vs. <!--INPUT-->,<!--OPTION-->) <!--POWER_RANGE-->, <!--POWER_END--> end.","diceMod":<!--POWER_DMG-->,"dice":<!--LEVELS-->,"halfDice":"~~<!--POWER_DMG-->~~","killingAttack":false££<!--DISPLAY-->££,"targetNumber":0,"targetCheck":false,"strMod":"<!--POWER_DMG-->","stunMultiplierMod":<!--MODIFIERS-->[[[<!--XMLID-->##<!--LEVELS-->]]]+<!--/MODIFIERS-->},<!--/IF_ATTACK--><!--/POWERS--><!--/IFPOWERS-->],
+"lightningReflex":[<!--IF_LIGHTNING_REFLEXES--><!--LIGHTNING_REFLEXES-->
+	{"name":"+<!--LEVELS--> DEX to act first with <!--OPTION_ALIAS-->","levels":<!--LEVELS-->,"tool":"<!--TEXT-->","isActive":false},<!--/LIGHTNING_REFLEXES--><!--/IF_LIGHTNING_REFLEXES--><!--IF_NO_LIGHTNING_REFLEXES-->{"name":"Lightning Reflexes","levels":0,"tool":"No Lightning Reflexes","isActive":false}<!--/IF_NO_LIGHTNING_REFLEXES-->]
+}
+
+<!--REG_REPLACE--><!--REGSTRING-->1/2<!--/REGSTRING--><!--REPSTRING-->½<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->1/2<!--/REGSTRING--><!--REPSTRING-->½<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING--> ½<!--/REGSTRING--><!--REPSTRING-->½<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->"halfDice":"~~[0-9\ ]*½d6<!--/REGSTRING--><!--REPSTRING-->"halfDice":"½d6~~<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\~\~[^\~]*\~\~<!--/REGSTRING--><!--REPSTRING-->~~<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->½d6~~<!--/REGSTRING--><!--REPSTRING-->true<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->}[ \n\r]*,[ \n\r]*]<!--/REGSTRING--><!--REPSTRING-->}]<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->}[ \n\r]*,[ \n\r]*}[ \n\r]*,<!--/REGSTRING--><!--REPSTRING-->}},<!--/REPSTRING--><!--/REG_REPLACE-->
+
+<!--REPLACE--><!--DEFSTRING-->:  <!--/DEFSTRING--><!--REPSTRING-->: <!--/REPSTRING--><!--/REPLACE-->
+<!--REPLACE--><!--DEFSTRING--> (vs. ,)<!--/DEFSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REPLACE-->
+<!--REPLACE--><!--DEFSTRING-->Killing Attack - Ranged<!--/DEFSTRING--><!--REPSTRING-->Killing Ranged<!--/REPSTRING--><!--/REPLACE-->
+
+<!--REG_REPLACE--><!--REGSTRING-->"halfDice"\:"~~"<!--/REGSTRING--><!--REPSTRING-->"halfDice":false<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->"halfDice"\:"true"<!--/REGSTRING--><!--REPSTRING-->"halfDice":true<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->false\£\£[kK]ill.*?\£\£<!--/REGSTRING--><!--REPSTRING-->true<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->false\£\£.*?\£\£<!--/REGSTRING--><!--REPSTRING-->false<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\[\[\[INCREASEDSTUNMULTIPLIER\#\#<!--/REGSTRING--><!--REPSTRING-->~~~+<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\[\[\[DECREASEDSTUNMULTIPLIER\#\#<!--/REGSTRING--><!--REPSTRING-->~~~-<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\[\[\[[^\d\-].*?\]\]\]\+<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\]\]\]\+<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\~\~\~\+<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\~\~\~<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->"stunMultiplierMod"\:\}<!--/REGSTRING--><!--REPSTRING-->"stunMultiplierMod":0}<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->"diceMod"\:\d*[½]*d\d*[\+]*<!--/REGSTRING--><!--REPSTRING-->"diceMod":<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\"diceMod\"\:[^\-\d].*"dice"<!--/REGSTRING--><!--REPSTRING-->"diceMod":0,"dice"<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\"diceMod\"\:[\d]+ Act.*"dice"<!--/REGSTRING--><!--REPSTRING-->"diceMod":0,"dice"<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\"diceMod\"\:[\d]+m ra.*"dice"<!--/REGSTRING--><!--REPSTRING-->"diceMod":0,"dice"<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\"tool\"\:\", <!--/REGSTRING--><!--REPSTRING-->"tool":"<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\(vs\. \,<!--/REGSTRING--><!--REPSTRING-->(vs. <!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\,\)<!--/REGSTRING--><!--REPSTRING-->)<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\"stun\"\:\,<!--/REGSTRING--><!--REPSTRING-->"stun":{"value":"0","shortname":"stun","name":"Stun","roll":"","damage":""},<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\{\"name\"\:\"\"\,<!--/REGSTRING--><!--REPSTRING-->{"name":"No Name Supplied",<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->ocvMod"\:\+<!--/REGSTRING--><!--REPSTRING-->ocvMod":<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->ocvMod"\:\-\-<!--/REGSTRING--><!--REPSTRING-->ocvMod":0<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->dcvMod"\:\+<!--/REGSTRING--><!--REPSTRING-->dcvMod":<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->dcvMod"\:\-\-<!--/REGSTRING--><!--REPSTRING-->dcvMod":0<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->(?<=[^\>\{\[\,\:\n])(\")(?=[^\>\}\]\,\:\n])<!--/REGSTRING--><!--REPSTRING-->＂<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\Â<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\$\$\$RANGE\$\$\$[\w\:\;\-\ \/\+\,\½]*?, Range <!--/REGSTRING--><!--REPSTRING-->"rngMod":<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->,[\w\:\;\-\ \/\+\,\½]*?\£\£\£RANGE\£\£\£<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING-->BLAH<!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING--> "rngMod":\+<!--/REGSTRING--><!--REPSTRING-->"rngMod":<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\!\!\!ABORT\!\!\![\w\:\;\-\ \/\+\,]*?, Abort<!--/REGSTRING--><!--REPSTRING-->"abort":true!!!ABORT!!!<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\!\!\!ABORT\!\!\![\w\:\;\-\ \/\+\,]*?\&\&\&ABORT\&\&\&<!--/REGSTRING--><!--REPSTRING-->"abort":false<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\"abort\"\:true\"abort\"\:false<!--/REGSTRING--><!--REPSTRING-->"abort":true<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\Â<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->[ 0]½<!--/REGSTRING--><!--REPSTRING-->½<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->"strMod":"[\w\:\;\-\ \/\+\,\½\(]*?STR\)\"<!--/REGSTRING--><!--REPSTRING-->"strMod":true<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->"strMod":"[\w\:\;\-\ \/\+\,\½\(]*?"<!--/REGSTRING--><!--REPSTRING-->"strMod":false<!--/REPSTRING--><!--/REG_REPLACE-->
