@@ -1,6 +1,6 @@
-<!--TEMPLATE_NAME-->6e JSON - Brennall's 6e Full Combat Record<!--/TEMPLATE_NAME--><!--TEMPLATE_DESCRIPTION--><p>6e JSON - Brennall's 6e Combat Record</p><p>Version 1.7  21/03/2019</p><p>JSON Data dump for ingestion online into other systems</p><!--/TEMPLATE_DESCRIPTION--><!--FILE_EXTENSION-->json<!--/FILE_EXTENSION-->{
+<!--TEMPLATE_NAME-->6e JSON - Brennall's 6e Full Combat Record<!--/TEMPLATE_NAME--><!--TEMPLATE_DESCRIPTION--><p>6e JSON - Brennall's 6e Combat Record</p><p>Version 1.8  22/03/2020</p><p>JSON Data dump for ingestion online into other systems</p><!--/TEMPLATE_DESCRIPTION--><!--FILE_EXTENSION-->json<!--/FILE_EXTENSION-->{
 "name":"<!--CHARACTER_NAME-->",
-"version":1.7,
+"version":1.8,
 "str":<!--STR-->{"value":"<!--PRIMARY-->","shortname":"str","name":"Strength","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/STR-->
 "dex":<!--DEX-->{"value":"<!--PRIMARY-->","shortname":"dex","name":"Dexterity","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/DEX-->
 "con":<!--CON-->{"value":"<!--PRIMARY-->","shortname":"con","name":"Constitution","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/CON-->
@@ -37,7 +37,8 @@
 "attacks":[<!--IFPOWERS--><!--POWERS--><!--IF_ATTACK-->
 	{"name":"<!--IFNAME--><!--NAME--><!--/IFNAME-->","type":"<!--DISPLAY-->","damage":"<!--POWER_DMG-->","range":"<!--POWER_RANGE-->","input":"<!--INPUT--><!--OPTION-->","level":"<!--LEVELS-->","end":"<!--POWER_END-->","active":"<!--ACTIVE_COST-->","base":"<!--BASE_COST-->","XMLID":"<!--XMLID-->","strMod":"<!--POWER_DMG-->"},<!--/IF_ATTACK--><!--/POWERS--><!--/IFPOWERS-->],
 "martialArts":[	
-	{"name":"Other Attacks","gameEdition":6 ,"ocvMod":0,"dcvMod":0,"dice":3,"halfDice":false,"effect":"Normal Attack","time":"½","level":"0","killingAttack":false,"active":"1","targetNumber":0,"targetCheck":false,"stunMultiplierMod":0,"tool":"Other Attacks: ½ Phase, +0 OCV, +0 DCV, Normal attack","toHit":true,"againstOCV":false,"toPost":false,"post":"","rngMod":0,"abort":false},<!--MARTIAL_ARTS--><!--IF_MANEUVER-->,{"name":"<!--MANEUVER_NAME-->","gameEdition":6 ,"ocvMod":<!--MANEUVER_OCV-->,"dcvMod":<!--MANEUVER_DCV-->,"dice":3,"halfDice":false,"effect":"<!--MANEUVER_EFFECT-->","time":"<!--MANEUVER_PHASE-->","level":"<!--LEVELS-->","killingAttack":false,"toHit":true,"againstOCV":false,"toPost":false,"post":"","active":"<!--ACTIVE_COST-->","targetNumber":0,"targetCheck":false,"stunMultiplierMod":0,"tool":"<!--TEXT-->", $$$RANGE$$$<!--MA_TEXT-->, Range +0,£££RANGE£££, !!!ABORT!!!<!--MANEUVER_EFFECT-->&&&ABORT&&&},<!--/IF_MANEUVER--><!--/MARTIAL_ARTS-->],
+	{"name":"Other Attacks","gameEdition":6 ,"ocvMod":0,"dcvMod":0,"dice":3,"halfDice":false,"effect":"Normal Attack","time":"½","level":"0","killingAttack":false,"active":"1","targetNumber":0,"targetCheck":false,"stunMultiplierMod":0,"tool":"Other Attacks: ½ Phase, +0 OCV, +0 DCV, Normal attack","toHit":true,"againstOCV":false,"toPost":false,"post":"","rngMod":0,"abort":false},
+	<!--MARTIAL_ARTS--><!--IF_MANEUVER-->{"name":"<!--MANEUVER_NAME-->","gameEdition":6 ,"ocvMod":<!--MANEUVER_OCV-->,"dcvMod":<!--MANEUVER_DCV-->,"dice":3,"halfDice":false,"effect":"<!--MANEUVER_EFFECT-->","time":"<!--MANEUVER_PHASE-->","level":"<!--LEVELS-->","killingAttack":false,"toHit":true,"againstOCV":false,"toPost":false,"post":"","active":"<!--ACTIVE_COST-->","targetNumber":0,"targetCheck":false,"stunMultiplierMod":0,"tool":"<!--TEXT-->", $$$RANGE$$$<!--MA_TEXT-->, Range +0,£££RANGE£££, !!!ABORT!!!<!--MANEUVER_EFFECT-->&&&ABORT&&&},<!--/IF_MANEUVER--><!--/MARTIAL_ARTS-->],
 "rolls":[<!--IFPOWERS--><!--POWERS--><!--IF_ATTACK-->
 	{"name":"<!--IFNAME--><!--NAME--><!--/IFNAME-->","gameEdition":6,"tool":"<!--POWER_DMG-->, <!--DISPLAY--> (vs. <!--INPUT-->,<!--OPTION-->) <!--POWER_RANGE-->, <!--POWER_END--> end.","diceMod":<!--POWER_DMG-->,"dice":<!--LEVELS-->,"halfDice":"~~<!--POWER_DMG-->~~","killingAttack":false££<!--DISPLAY-->££,"targetNumber":0,"targetCheck":false,"strMod":"<!--POWER_DMG-->","stunMultiplierMod":<!--MODIFIERS-->[[[<!--XMLID-->##<!--LEVELS-->]]]+<!--/MODIFIERS-->},<!--/IF_ATTACK--><!--/POWERS--><!--/IFPOWERS-->],
 "lightningReflex":[<!--IF_LIGHTNING_REFLEXES--><!--LIGHTNING_REFLEXES-->
@@ -83,13 +84,13 @@
 <!--REG_REPLACE--><!--REGSTRING-->dcvMod"\:\-\-<!--/REGSTRING--><!--REPSTRING-->dcvMod":0<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->(?<=[^\>\{\[\,\:\n])(\")(?=[^\>\}\]\,\:\n])<!--/REGSTRING--><!--REPSTRING-->＂<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\Â<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
-<!--REG_REPLACE--><!--REGSTRING-->\$\$\$RANGE\$\$\$[\w\:\;\-\ \/\+\,\½]*?, Range <!--/REGSTRING--><!--REPSTRING-->"rngMod":<!--/REPSTRING--><!--/REG_REPLACE-->
-<!--REG_REPLACE--><!--REGSTRING-->,[\w\:\;\-\ \/\+\,\½]*?\£\£\£RANGE\£\£\£<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING-->BLAH<!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\$\$\$RANGE\$\$\$[\w\:\;\-\ \.\/\+\,\!\½]*?, Range <!--/REGSTRING--><!--REPSTRING-->"rngMod":<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->,[\w\:\;\-\ \.\/\+\,\!\½]*?\£\£\£RANGE\£\£\£<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING-->BLAH<!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING--> "rngMod":\+<!--/REGSTRING--><!--REPSTRING-->"rngMod":<!--/REPSTRING--><!--/REG_REPLACE-->
-<!--REG_REPLACE--><!--REGSTRING-->\!\!\!ABORT\!\!\![\w\:\;\-\ \/\+\,]*?, Abort<!--/REGSTRING--><!--REPSTRING-->"abort":true!!!ABORT!!!<!--/REPSTRING--><!--/REG_REPLACE-->
-<!--REG_REPLACE--><!--REGSTRING-->\!\!\!ABORT\!\!\![\w\:\;\-\ \/\+\,]*?\&\&\&ABORT\&\&\&<!--/REGSTRING--><!--REPSTRING-->"abort":false<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\!\!\!ABORT\!\!\![\w\:\;\-\ \.\/\+\,\!\½]*?, Abort<!--/REGSTRING--><!--REPSTRING-->"abort":true!!!ABORT!!!<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\!\!\!ABORT\!\!\![\w\:\;\-\ \.\/\+\,\!\½]*?\&\&\&ABORT\&\&\&<!--/REGSTRING--><!--REPSTRING-->"abort":false<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\"abort\"\:true\"abort\"\:false<!--/REGSTRING--><!--REPSTRING-->"abort":true<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\Â<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->[ 0]½<!--/REGSTRING--><!--REPSTRING-->½<!--/REPSTRING--><!--/REG_REPLACE-->
-<!--REG_REPLACE--><!--REGSTRING-->"strMod":"[\w\:\;\-\ \/\+\,\½\(]*?STR\)\"<!--/REGSTRING--><!--REPSTRING-->"strMod":true<!--/REPSTRING--><!--/REG_REPLACE-->
-<!--REG_REPLACE--><!--REGSTRING-->"strMod":"[\w\:\;\-\ \/\+\,\½\(]*?"<!--/REGSTRING--><!--REPSTRING-->"strMod":false<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->"strMod":"[\w\:\;\-\ \.\/\+\,\!\½\(]*?STR\)\"<!--/REGSTRING--><!--REPSTRING-->"strMod":true<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->"strMod":"[\w\:\;\-\ \.\/\+\,\!\½\(]*?"<!--/REGSTRING--><!--REPSTRING-->"strMod":false<!--/REPSTRING--><!--/REG_REPLACE-->
