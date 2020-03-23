@@ -14,3 +14,6 @@ Testing procedures before submitting issues with the JsonExport from Hero Design
 3. Paste the content into the empty text box
 4. Click the "Validate JSON" button.
 5. Copy the results and raise a bug request issue above with them in.
+
+Last Change:-
+23/03/2020 - 5th Edition Exporter template added. Early Beta
