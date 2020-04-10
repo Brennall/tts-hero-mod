@@ -2,3 +2,6 @@ type="Figurine"
 tinting="#73CF76"
 scale={1.06, 1.00, 1.06}
 material="Cardboard"
+model="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/obj"
+texture="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/textures/grass001/texture.jpg"
+collider="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/obj"
