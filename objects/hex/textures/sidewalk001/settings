@@ -1,7 +1,7 @@
   
 type="Figurine"
 tinting="#AEAEAE"
-scale={1.00, 1.00, 1.00}
+scale={1.00, 1.40, 1.00}
 material="Cardboard"
 non-convex=false
 model="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/obj"
