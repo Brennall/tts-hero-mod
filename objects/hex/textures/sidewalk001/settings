@@ -1,1 +1,13 @@
-awd
+  
+type="Figurine"
+tinting="#AEAEAE"
+scale={1.00, 1.00, 1.00}
+material="Cardboard"
+non-convex=false
+model="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/obj"
+texture="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/textures/sidewalk001/texture.jpg"
+collider="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/obj"
+name=""
+description=""
+gmnotes=""
+buildnotes="Sidewalk texture hex, can be tinted to look dry, dirty etc"
