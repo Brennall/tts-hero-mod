@@ -1,0 +1,12 @@
+type="Figurine"
+tinting="#7D7D7D"
+scale={1.00, 1.00, 1.00}
+material="Cardboard"
+non-convex=false
+model="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/obj"
+texture="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/textures/sand001/texture.jpg"
+collider="https://raw.githubusercontent.com/Brennall/tts-hero-mod/master/objects/hex/collider"
+name=""
+description=""
+gmnotes=""
+buildnotes="Sand texture hex, can be tinted to look dry, alien etc"
