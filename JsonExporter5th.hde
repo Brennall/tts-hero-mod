@@ -9,7 +9,7 @@
 "com":<!--COM-->{"value":"<!--PRIMARY-->","shortname":"ego","name":"Ego","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/COM-->
 "pre":<!--PRE-->{"value":"<!--PRIMARY-->","shortname":"pre","name":"Presence","roll":"<!--PRIMARY_ROLL-->-","damage":"","value2":"<!--SECONDARY-->","roll2":"<!--SECONDARY_ROLL-->","damage2":""},<!--/PRE-->
 "spd":<!--SPD-->{"value":"<!--PRIMARY-->","shortname":"spd","name":"Speed","roll":"","damage":"","value2":"<!--SECONDARY-->","roll2":"","damage2":""},<!--/SPD-->
-"ocv":{"value":"<!--PRIMARY_OCV-->","shortname":"ocv","name":"Offensive Combat Value","roll":"","damage":"","value2":"<!--SECONDARY_OCV-->","roll2":"","damage2":""},
+"ocv":{"value":"<!--PRIMARY_OCV-->, <!--MATH--><!--PRIMARY_OCV-->+0.5<!--/MATH-->: <!--MATH--><!--PRIMARY_OCV-->+0<!--/MATH-->","shortname":"ocv","name":"Offensive Combat Value","roll":"","damage":"","value2":"<!--SECONDARY_OCV-->","roll2":"","damage2":""},
 "dcv":{"value":"<!--PRIMARY_DCV-->","shortname":"dcv","name":"Defensive Combat Value","roll":"","damage":"","value2":"<!--SECONDARY_DCV-->","roll2":"","damage2":""},
 "omcv":{"value":"<!--PRIMARY_ECV-->","shortname":"omcv","name":"Offensive Mental Combat Value","roll":"","damage":"","value2":"<!--SECONDARY_ECV-->","roll2":"","damage2":""},
 "dmcv":{"value":"<!--PRIMARY_ECV-->","shortname":"dmcv","name":"Defensive Mental Combat Value","roll":"","damage":"","value2":"<!--SECONDARY_ECV-->","roll2":"","damage2":""},
@@ -47,9 +47,13 @@
 	{"name":"+<!--LEVELS--> DEX to act first with <!--OPTION_ALIAS-->","levels":<!--LEVELS-->,"tool":"<!--TEXT-->","isActive":false},<!--/LIGHTNING_REFLEXES--><!--/IF_LIGHTNING_REFLEXES--><!--IF_NO_LIGHTNING_REFLEXES-->{"name":"Lightning Reflexes","levels":0,"tool":"No Lightning Reflexes","isActive":false}<!--/IF_NO_LIGHTNING_REFLEXES-->]
 }
 
+
+
 <!--REG_REPLACE--><!--REGSTRING-->1/2<!--/REGSTRING--><!--REPSTRING-->½<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->1/2<!--/REGSTRING--><!--REPSTRING-->½<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING--> ½<!--/REGSTRING--><!--REPSTRING-->½<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->(?<=\"diceMod\"\:)\d*<!--/REGSTRING--><!--REPSTRING-->Blah<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\ w\/STR\)\,(?=\"dice\")<!--/REGSTRING--><!--REPSTRING-->,<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->"halfDice":"~~[0-9\ ]*½d6<!--/REGSTRING--><!--REPSTRING-->"halfDice":"½d6~~<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\~\~[^\~]*\~\~<!--/REGSTRING--><!--REPSTRING-->~~<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->½d6~~<!--/REGSTRING--><!--REPSTRING-->true<!--/REPSTRING--><!--/REG_REPLACE-->
@@ -71,7 +75,7 @@
 <!--REG_REPLACE--><!--REGSTRING-->\~\~\~\+<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\~\~\~<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->"stunMultiplierMod"\:\}<!--/REGSTRING--><!--REPSTRING-->"stunMultiplierMod":0}<!--/REPSTRING--><!--/REG_REPLACE-->
-<!--REG_REPLACE--><!--REGSTRING-->"diceMod"\:\d*[½]*d\d*[\+]*<!--/REGSTRING--><!--REPSTRING-->"diceMod":<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->\"diceMod"\:\d*[½]*d\d*[\+]*<!--/REGSTRING--><!--REPSTRING-->"diceMod":<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\"diceMod\"\:[^\-\d].*"dice"<!--/REGSTRING--><!--REPSTRING-->"diceMod":0,"dice"<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\"diceMod\"\:[\d]+ Act.*"dice"<!--/REGSTRING--><!--REPSTRING-->"diceMod":0,"dice"<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\"diceMod\"\:[\d]+m ra.*"dice"<!--/REGSTRING--><!--REPSTRING-->"diceMod":0,"dice"<!--/REPSTRING--><!--/REG_REPLACE-->
@@ -85,7 +89,8 @@
 <!--REG_REPLACE--><!--REGSTRING-->dcvMod"\:\+<!--/REGSTRING--><!--REPSTRING-->dcvMod":<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->dcvMod"\:\-\-<!--/REGSTRING--><!--REPSTRING-->dcvMod":0<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->(?<=[^\>\{\[\,\:\n])(\")(?=[^\>\}\]\,\:\n])<!--/REGSTRING--><!--REPSTRING-->＂<!--/REPSTRING--><!--/REG_REPLACE-->
-<!--REG_REPLACE--><!--REGSTRING-->(?<=\d)(\")(?=\,\ )<!--/REGSTRING--><!--REPSTRING-->＂<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->(?<=\d)(\")(?=\,\ \")<!--/REGSTRING--><!--REPSTRING-->＂<!--/REPSTRING--><!--/REG_REPLACE-->
+<!--REG_REPLACE--><!--REGSTRING-->(?<=\d)(\")(?=\,\ \[)<!--/REGSTRING--><!--REPSTRING-->＂<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\Â<!--/REGSTRING--><!--REPSTRING--><!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING-->\$\$\$RANGE\$\$\$.*?, Range <!--/REGSTRING--><!--REPSTRING-->"rngMod":<!--/REPSTRING--><!--/REG_REPLACE-->
 <!--REG_REPLACE--><!--REGSTRING--> "rngMod":\+<!--/REGSTRING--><!--REPSTRING-->"rngMod":<!--/REPSTRING--><!--/REG_REPLACE-->
